@@ -26,7 +26,7 @@
             <span class="bg-brand/90 text-white text-xs md:text-sm font-semibold uppercase tracking-widest py-1 px-4 rounded-full">Plan Familiar y Amigos</span>
             <h1 class="text-4xl md:text-6xl font-extrabold text-white mt-4 mb-4 tracking-tight">¡Nos Vamos a la Sabana!</h1>
             <p class="text-lg md:text-xl text-gray-200 mb-8">
-                Un fin de semana extraordinario para desconectarnos. Del <strong>19 al 23 de noviembre</strong>, 15 personas compartiendo en el mejor entorno campestre.
+                Un fin de semana extraordinario para desconectarnos. Del <strong>19 al 23 de noviembre</strong>, compartiendo en el mejor entorno campestre.
             </p>
             <a href="#opciones" class="inline-block bg-brand hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
                 Ver y Votar Opciones
@@ -36,14 +36,15 @@
 
     <main id="opciones" class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-            <h2 class="text-3xl font-extrabold text-dark sm:text-4xl">Nuestras 10 Mejores Opciones</h2>
+            <h2 class="text-3xl font-extrabold text-dark sm:text-4xl">Nuestras Opciones</h2>
             <p class="mt-3 text-base text-gray-600 max-w-2xl mx-auto">
-                Seleccionadas en Facatativá, Funza, Tenjo y El Rosal. Revisa las características, elige tu favorita y vota en el grupo.
+                Toca la foto de cada finca para ver más detalles en la web. Para elegir tu favorita, haz clic en votar y pégalo en nuestro grupo.
             </p>
         </div>
 
         <div id="grid-fincas" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            </div>
+            <!-- Renderizado dinámico -->
+        </div>
     </main>
 
     <footer class="bg-dark text-slate-400 py-8 text-center text-sm border-t border-slate-800">
@@ -53,94 +54,64 @@
     <script>
         const fincas = [
             {
-                nombre: "Finca el Ensueño",
-                municipio: "Tenjo",
-                vereda: "Zona Rural Tenjo",
-                precio: "$80.000 - $100.000 COP",
-                calificacion: "Excelente",
+                nombre: "Finca el Ensueño", municipio: "Tenjo", vereda: "Zona Rural Tenjo", precio: "$80.000 - $100.000 COP", calificacion: "Excelente",
                 destacado: "Amplios terrenos verdes, gran parqueadero privado y entorno muy silencioso.",
-                img: "https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?w=600&auto=format&fit=crop&q=80"
+                img: "https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?w=600&auto=format&fit=crop&q=80",
+                linkDetalle: "https://www.airbnb.com.co/s/Tenjo--Colombia/homes"
             },
             {
-                nombre: "Finca El Recreo",
-                municipio: "Tenjo",
-                vereda: "Vía Tabio",
-                precio: "$85.000 - $105.000 COP",
-                calificacion: "Muy Buena",
+                nombre: "Finca El Recreo", municipio: "Tenjo", vereda: "Vía Tabio", precio: "$85.000 - $105.000 COP", calificacion: "Muy Buena",
                 destacado: "Paisajes tradicionales, zonas abiertas para asados y excelente espacio social.",
-                img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&auto=format&fit=crop&q=80"
+                img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&auto=format&fit=crop&q=80",
+                linkDetalle: "https://www.booking.com/searchresults.es.html?ss=Tenjo+Colombia"
             },
             {
-                nombre: "Hacienda El Pueblito",
-                municipio: "Tenjo",
-                vereda: "Vía Funza - Tenjo",
-                precio: "$90.000 - $110.000 COP",
-                calificacion: "Sobresaliente",
+                nombre: "Hacienda El Pueblito", municipio: "Tenjo", vereda: "Vía Funza - Tenjo", precio: "$90.000 - $110.000 COP", calificacion: "Sobresaliente",
                 destacado: "Arquitectura sabanera clásica, fácil acceso por vías principales y hermosos jardines.",
-                img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&auto=format&fit=crop&q=80"
+                img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&auto=format&fit=crop&q=80",
+                linkDetalle: "https://www.google.com/search?q=Hacienda+El+Pueblito+Tenjo+alojamiento"
             },
             {
-                nombre: "La Cantaleta Campestre",
-                municipio: "Facatativá",
-                vereda: "Santa Rosa",
-                precio: "$75.000 - $95.000 COP",
-                calificacion: "4.1 / 5",
+                nombre: "La Cantaleta Campestre", municipio: "Facatativá", vereda: "Santa Rosa", precio: "$75.000 - $95.000 COP", calificacion: "4.1 / 5",
                 destacado: "Ambiente muy relajante, amplias zonas de integración y contacto directo con la naturaleza.",
-                img: "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=600&auto=format&fit=crop&q=80"
+                img: "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=600&auto=format&fit=crop&q=80",
+                linkDetalle: "https://www.google.com/search?q=La+Cantaleta+Campestre+Facatativá"
             },
             {
-                nombre: "Restaurante de Montaña & Spa",
-                municipio: "Facatativá",
-                vereda: "Sector Montaña",
-                precio: "$100.000 - $120.000 COP",
-                calificacion: "Exclusiva",
+                nombre: "Restaurante de Montaña & Spa", municipio: "Facatativá", vereda: "Sector Montaña", precio: "$100.000 - $120.000 COP", calificacion: "Exclusiva",
                 destacado: "Servicios de spa y relajación, clima de montaña y opción de restaurante integrado.",
-                img: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&auto=format&fit=crop&q=80"
+                img: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&auto=format&fit=crop&q=80",
+                linkDetalle: "https://www.airbnb.com.co/s/Facatativá--Colombia/homes"
             },
             {
-                nombre: "Casa Marly Eventos",
-                municipio: "Facatativá",
-                vereda: "San Rafael",
-                precio: "$80.000 - $100.000 COP",
-                calificacion: "Muy Buena",
+                nombre: "Casa Marly Eventos", municipio: "Facatativá", vereda: "San Rafael", precio: "$80.000 - $100.000 COP", calificacion: "Muy Buena",
                 destacado: "Estilo rústico, grandes zonas comunes para reuniones de 15 personas y fácil parqueadero.",
-                img: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&auto=format&fit=crop&q=80"
+                img: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&auto=format&fit=crop&q=80",
+                linkDetalle: "https://www.google.com/search?q=Casa+Marly+Eventos+Facatativá"
             },
             {
-                nombre: "Hacienda Los Caballos",
-                municipio: "Funza",
-                vereda: "Zona Campestre Funza",
-                precio: "$85.000 - $110.000 COP",
-                calificacion: "Excelente",
+                nombre: "Hacienda Los Caballos", municipio: "Funza", vereda: "Zona Campestre", precio: "$85.000 - $110.000 COP", calificacion: "Excelente",
                 destacado: "Confort tradicional sabanero, alta privacidad y zonas exteriores para comidas en grupo.",
-                img: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600&auto=format&fit=crop&q=80"
+                img: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600&auto=format&fit=crop&q=80",
+                linkDetalle: "https://www.google.com/search?q=Hacienda+Los+Caballos+Funza+alojamiento"
             },
             {
-                nombre: "Hacienda Moncora",
-                municipio: "El Rosal",
-                vereda: "Buena Vista",
-                precio: "$110.000 - $130.000 COP",
-                calificacion: "4.8 / 5",
+                nombre: "Hacienda Moncora", municipio: "El Rosal", vereda: "Buena Vista", precio: "$110.000 - $130.000 COP", calificacion: "4.8 / 5",
                 destacado: "Nivel premium, jardines espectaculares, máxima exclusividad y comodidad superior.",
-                img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&auto=format&fit=crop&q=80"
+                img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&auto=format&fit=crop&q=80",
+                linkDetalle: "https://www.google.com/search?q=Hacienda+Moncora+El+Rosal"
             },
             {
-                nombre: "Casa de Campo Genesis",
-                municipio: "El Rosal",
-                vereda: "Rural El Rosal",
-                precio: "$80.000 - $95.000 COP",
-                calificacion: "Acogedora",
+                nombre: "Casa de Campo Genesis", municipio: "El Rosal", vereda: "Rural El Rosal", precio: "$80.000 - $95.000 COP", calificacion: "Acogedora",
                 destacado: "Estilo hogareño, total tranquilidad, aislada de vías principales y gran cocina social.",
-                img: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&auto=format&fit=crop&q=80"
+                img: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&auto=format&fit=crop&q=80",
+                linkDetalle: "https://www.airbnb.com.co/s/El-Rosal--Cundinamarca--Colombia/homes"
             },
             {
-                nombre: "Villas del Espino",
-                municipio: "El Rosal",
-                vereda: "Sector El Espino",
-                precio: "$90.000 - $115.000 COP",
-                calificacion: "4.6 / 5",
+                nombre: "Villas del Espino", municipio: "El Rosal", vereda: "Sector El Espino", precio: "$90.000 - $115.000 COP", calificacion: "4.6 / 5",
                 destacado: "Instalaciones modernas, excelente distribución para 15 huéspedes y áreas impecables.",
-                img: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&auto=format&fit=crop&q=80"
+                img: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&auto=format&fit=crop&q=80",
+                linkDetalle: "https://www.google.com/search?q=Villas+del+Espino+El+Rosal"
             }
         ];
 
@@ -150,18 +121,19 @@
             const card = document.createElement('div');
             card.className = "bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 flex flex-col justify-between border border-slate-100";
             
-            // Link directo para enviar voto por WhatsApp
-            const mensajeWa = encodeURIComponent(`¡Hola! Voto por la opción: ${finca.nombre} en ${finca.municipio} para nuestro viaje en noviembre.`);
-            const linkWa = `https://api.whatsapp.com/send?text=${mensajeWa}`;
-
             card.innerHTML = `
                 <div>
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="${finca.img}" alt="${finca.nombre}" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
+                    <!-- Imagen con enlace a detalles -->
+                    <a href="${finca.linkDetalle}" target="_blank" title="Clic para ver más detalles en la web" class="relative h-48 overflow-hidden block group">
+                        <img src="${finca.img}" alt="${finca.nombre}" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition duration-300"></div>
                         <span class="absolute top-3 right-3 bg-dark/80 backdrop-blur-md text-white text-xs font-semibold py-1 px-3 rounded-full">
                             ${finca.municipio}
                         </span>
-                    </div>
+                        <span class="absolute bottom-3 left-3 bg-brand/90 text-white text-xs font-semibold py-1 px-3 rounded-lg flex items-center opacity-0 group-hover:opacity-100 transition duration-300">
+                            🔍 Ver detalles
+                        </span>
+                    </a>
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-2">
                             <h3 class="text-xl font-bold text-dark">${finca.nombre}</h3>
@@ -176,13 +148,28 @@
                     </div>
                 </div>
                 <div class="px-6 pb-6">
-                    <a href="${linkWa}" target="_blank" class="block text-center w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2.5 px-4 rounded-xl shadow transition duration-200">
-                        Votar en el Grupo
-                    </a>
+                    <!-- Botón que ejecuta la función JS de copiar y abrir WhatsApp -->
+                    <button onclick="votar('${finca.nombre}')" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2.5 px-4 rounded-xl shadow transition duration-200 flex justify-center items-center gap-2">
+                        <span>Votar en el Grupo</span>
+                    </button>
                 </div>
             `;
             grid.appendChild(card);
         });
+
+        // Función para copiar el voto al portapapeles y abrir el grupo
+        function votar(nombreFinca) {
+            const textoVoto = `¡Hola! Mi voto para la escapada es por: *${nombreFinca}*`;
+            
+            // Intenta copiar al portapapeles primero
+            navigator.clipboard.writeText(textoVoto).then(() => {
+                alert(`¡Se ha copiado tu voto por ${nombreFinca}!\n\nAl darle Aceptar, se abrirá WhatsApp. Solo tienes que darle a "Pegar" y enviar el mensaje en el grupo.`);
+                window.open('https://chat.whatsapp.com/LiX03QcQEtyFeFkM7XRw6L', '_blank');
+            }).catch(err => {
+                // Si falla el portapapeles, simplemente abre el grupo
+                window.open('https://chat.whatsapp.com/LiX03QcQEtyFeFkM7XRw6L', '_blank');
+            });
+        }
     </script>
 </body>
 </html>
