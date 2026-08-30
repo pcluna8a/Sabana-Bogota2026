@@ -4,115 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escapada a la Sabana | Noviembre 2026</title>
+    <!-- Fuente moderna de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
                     colors: {
-                        brand: '#16a34a',
-                        dark: '#0f172a'
+                        brand: '#10b981', // Emerald 500
                     }
                 }
             }
         }
     </script>
+    <style>
+        /* Pequeño ajuste para la barra de desplazamiento */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #10b981; border-radius: 4px; }
+    </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased">
+<body class="text-slate-100 font-sans antialiased relative selection:bg-brand selection:text-white">
 
-    <header class="relative h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1542315570-5b23d95c2197?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
-        <div class="absolute inset-0 bg-black/60"></div>
-        <div class="relative z-10 text-center px-4 max-w-3xl mx-auto">
-            <span class="bg-brand/90 text-white text-xs md:text-sm font-semibold uppercase tracking-widest py-1 px-4 rounded-full">Plan Familiar y Amigos</span>
-            <h1 class="text-4xl md:text-6xl font-extrabold text-white mt-4 mb-4 tracking-tight">¡Nos Vamos a la Sabana!</h1>
-            <p class="text-lg md:text-xl text-gray-200 mb-8">
-                Un fin de semana extraordinario para desconectarnos. Del <strong>19 al 23 de noviembre</strong>, compartiendo en el mejor entorno campestre.
+    <!-- FONDO FIJO PARA EL EFECTO GLASSMORPHISM -->
+    <div class="fixed inset-0 z-[-2] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1542315570-5b23d95c2197?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');"></div>
+    <!-- Overlay oscuro para dar contraste al cristal -->
+    <div class="fixed inset-0 z-[-1] bg-gradient-to-br from-slate-900/90 via-slate-900/80 to-emerald-900/90 backdrop-blur-sm"></div>
+
+    <!-- HERO / LANDING PAGE -->
+    <header class="relative min-h-screen flex items-center justify-center pt-10 pb-20">
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+            <!-- Etiqueta Glass -->
+            <span class="inline-block bg-white/10 backdrop-blur-md border border-white/20 text-emerald-300 text-xs md:text-sm font-semibold uppercase tracking-widest py-1.5 px-5 rounded-full mb-6 shadow-lg">
+                Plan Familiar y Amigos
+            </span>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight drop-shadow-2xl">
+                ¡Nos Vamos a la <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">Sabana!</span>
+            </h1>
+            <p class="text-lg md:text-2xl text-slate-300 mb-10 font-light max-w-3xl mx-auto leading-relaxed">
+                Un fin de semana extraordinario para desconectarnos. Del <strong class="text-white font-semibold">19 al 23 de noviembre</strong>, compartiendo en el mejor entorno campestre.
             </p>
-            <a href="#opciones" class="inline-block bg-brand hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
-                Ver y Votar Opciones
+            <a href="#opciones" class="inline-block bg-brand hover:bg-emerald-400 text-white font-bold py-4 px-10 rounded-full shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all duration-300 transform hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(16,185,129,0.6)]">
+                Explorar y Votar Opciones
             </a>
         </div>
     </header>
 
-    <main id="opciones" class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-extrabold text-dark sm:text-4xl">Nuestras Opciones</h2>
-            <p class="mt-3 text-base text-gray-600 max-w-2xl mx-auto">
-                Toca la foto de cada finca para ver más detalles en la web. Para elegir tu favorita, haz clic en votar y pégalo en nuestro grupo.
+    <!-- MAIN CONTENT / CATALOGO DE FINCAS -->
+    <main id="opciones" class="max-w-7xl mx-auto py-20 px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 relative">
+            <h2 class="text-3xl font-extrabold text-white sm:text-5xl drop-shadow-lg">Alternativas de Alojamiento</h2>
+            <p class="mt-4 text-lg text-slate-400 max-w-2xl mx-auto font-light">
+                Toca la foto para buscar detalles en Google. Haz clic en votar para enviar tu elección al grupo de WhatsApp.
             </p>
         </div>
 
+        <!-- GRID DINÁMICO -->
         <div id="grid-fincas" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Renderizado dinámico -->
+            <!-- Las tarjetas se generan mediante JavaScript -->
         </div>
     </main>
 
-    <footer class="bg-dark text-slate-400 py-8 text-center text-sm border-t border-slate-800">
+    <!-- FOOTER GLASSMORPHISM -->
+    <footer class="bg-white/5 backdrop-blur-lg border-t border-white/10 text-slate-400 py-8 text-center text-sm mt-10">
         <p>Organización del Viaje Sabana de Bogotá &bull; Noviembre 2026</p>
     </footer>
 
+    <!-- SCRIPT LOGIC -->
     <script>
+        // Los mismos datos con los enlaces de Google y las imágenes que seleccionamos
         const fincas = [
-            {
-                nombre: "Finca el Ensueño", municipio: "Tenjo", vereda: "Zona Rural Tenjo", precio: "$80.000 - $100.000 COP", calificacion: "Excelente",
-                destacado: "Amplios terrenos verdes, gran parqueadero privado y entorno muy silencioso.",
-                img: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&auto=format&fit=crop&q=80",
-                linkDetalle: "https://www.google.com/search?q=Finca+el+Ensueño+Tenjo+alojamiento"
-            },
-            {
-                nombre: "Finca El Recreo", municipio: "Tenjo", vereda: "Vía Tabio", precio: "$85.000 - $105.000 COP", calificacion: "Muy Buena",
-                destacado: "Paisajes tradicionales, zonas abiertas para asados y excelente espacio social.",
-                img: "https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?w=600&auto=format&fit=crop&q=80",
-                linkDetalle: "https://www.google.com/search?q=Finca+El+Recreo+Tenjo+alojamiento"
-            },
-            {
-                nombre: "Hacienda El Pueblito", municipio: "Tenjo", vereda: "Vía Funza - Tenjo", precio: "$90.000 - $110.000 COP", calificacion: "Sobresaliente",
-                destacado: "Arquitectura sabanera clásica, fácil acceso por vías principales y hermosos jardines.",
-                img: "https://images.unsplash.com/photo-1592595896551-12b371d546d5?w=600&auto=format&fit=crop&q=80",
-                linkDetalle: "https://www.google.com/search?q=Hacienda+El+Pueblito+Tenjo+alojamiento"
-            },
-            {
-                nombre: "La Cantaleta Campestre", municipio: "Facatativá", vereda: "Santa Rosa", precio: "$75.000 - $95.000 COP", calificacion: "4.1 / 5",
-                destacado: "Ambiente muy relajante, amplias zonas de integración y contacto directo con la naturaleza.",
-                img: "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=600&auto=format&fit=crop&q=80",
-                linkDetalle: "https://www.google.com/search?q=La+Cantaleta+Campestre+Facatativá"
-            },
-            {
-                nombre: "Restaurante de Montaña & Spa", municipio: "Facatativá", vereda: "Sector Montaña", precio: "$100.000 - $120.000 COP", calificacion: "Exclusiva",
-                destacado: "Servicios de spa y relajación, clima de montaña y opción de restaurante integrado.",
-                img: "https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=600&auto=format&fit=crop&q=80",
-                linkDetalle: "https://www.google.com/search?q=Restaurante+de+Montaña+y+Spa+Facatativá+alojamiento"
-            },
-            {
-                nombre: "Casa Marly Eventos", municipio: "Facatativá", vereda: "San Rafael", precio: "$80.000 - $100.000 COP", calificacion: "Muy Buena",
-                destacado: "Estilo rústico, grandes zonas comunes para reuniones de 15 personas y fácil parqueadero.",
-                img: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80",
-                linkDetalle: "https://www.google.com/search?q=Casa+Marly+Eventos+Facatativá"
-            },
-            {
-                nombre: "Hacienda Los Caballos", municipio: "Funza", vereda: "Zona Campestre", precio: "$85.000 - $110.000 COP", calificacion: "Excelente",
-                destacado: "Confort tradicional sabanero, alta privacidad y zonas exteriores para comidas en grupo.",
-                img: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=600&auto=format&fit=crop&q=80",
-                linkDetalle: "https://www.google.com/search?q=Hacienda+Los+Caballos+Funza+alojamiento"
-            },
-            {
-                nombre: "Hacienda Moncora", municipio: "El Rosal", vereda: "Buena Vista", precio: "$110.000 - $130.000 COP", calificacion: "4.8 / 5",
-                destacado: "Nivel premium, jardines espectaculares, máxima exclusividad y comodidad superior.",
-                img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&auto=format&fit=crop&q=80",
-                linkDetalle: "https://www.google.com/search?q=Hacienda+Moncora+El+Rosal"
-            },
-            {
-                nombre: "Casa de Campo Genesis", municipio: "El Rosal", vereda: "Rural El Rosal", precio: "$80.000 - $95.000 COP", calificacion: "Acogedora",
-                destacado: "Estilo hogareño, total tranquilidad, aislada de vías principales y gran cocina social.",
-                img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&auto=format&fit=crop&q=80",
-                linkDetalle: "https://www.google.com/search?q=Casa+de+Campo+Genesis+El+Rosal+alojamiento"
-            },
-            {
-                nombre: "Villas del Espino", municipio: "El Rosal", vereda: "Sector El Espino", precio: "$90.000 - $115.000 COP", calificacion: "4.6 / 5",
-                destacado: "Instalaciones modernas, excelente distribución para 15 huéspedes y áreas impecables.",
-                img: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&auto=format&fit=crop&q=80",
-                linkDetalle: "https://www.google.com/search?q=Villas+del+Espino+El+Rosal"
-            }
+            { nombre: "Finca el Ensueño", municipio: "Tenjo", vereda: "Zona Rural Tenjo", precio: "$80.000 - $100.000 COP", calificacion: "Excelente", destacado: "Amplios terrenos verdes, gran parqueadero privado y entorno muy silencioso.", img: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&auto=format&fit=crop&q=80", linkDetalle: "https://www.google.com/search?q=Finca+el+Ensueño+Tenjo+alojamiento" },
+            { nombre: "Finca El Recreo", municipio: "Tenjo", vereda: "Vía Tabio", precio: "$85.000 - $105.000 COP", calificacion: "Muy Buena", destacado: "Paisajes tradicionales, zonas abiertas para asados y excelente espacio social.", img: "https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?w=600&auto=format&fit=crop&q=80", linkDetalle: "https://www.google.com/search?q=Finca+El+Recreo+Tenjo+alojamiento" },
+            { nombre: "Hacienda El Pueblito", municipio: "Tenjo", vereda: "Vía Funza - Tenjo", precio: "$90.000 - $110.000 COP", calificacion: "Sobresaliente", destacado: "Arquitectura sabanera clásica, fácil acceso por vías principales y hermosos jardines.", img: "https://images.unsplash.com/photo-1592595896551-12b371d546d5?w=600&auto=format&fit=crop&q=80", linkDetalle: "https://www.google.com/search?q=Hacienda+El+Pueblito+Tenjo+alojamiento" },
+            { nombre: "La Cantaleta Campestre", municipio: "Facatativá", vereda: "Santa Rosa", precio: "$75.000 - $95.000 COP", calificacion: "4.1 / 5", destacado: "Ambiente muy relajante, amplias zonas de integración y contacto directo con la naturaleza.", img: "https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=600&auto=format&fit=crop&q=80", linkDetalle: "https://www.google.com/search?q=La+Cantaleta+Campestre+Facatativá" },
+            { nombre: "Restaurante de Montaña & Spa", municipio: "Facatativá", vereda: "Sector Montaña", precio: "$100.000 - $120.000 COP", calificacion: "Exclusiva", destacado: "Servicios de spa y relajación, clima de montaña y opción de restaurante integrado.", img: "https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=600&auto=format&fit=crop&q=80", linkDetalle: "https://www.google.com/search?q=Restaurante+de+Montaña+y+Spa+Facatativá+alojamiento" },
+            { nombre: "Casa Marly Eventos", municipio: "Facatativá", vereda: "San Rafael", precio: "$80.000 - $100.000 COP", calificacion: "Muy Buena", destacado: "Estilo rústico, grandes zonas comunes para reuniones de 15 personas y fácil parqueadero.", img: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&auto=format&fit=crop&q=80", linkDetalle: "https://www.google.com/search?q=Casa+Marly+Eventos+Facatativá" },
+            { nombre: "Hacienda Los Caballos", municipio: "Funza", vereda: "Zona Campestre", precio: "$85.000 - $110.000 COP", calificacion: "Excelente", destacado: "Confort tradicional sabanero, alta privacidad y zonas exteriores para comidas en grupo.", img: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=600&auto=format&fit=crop&q=80", linkDetalle: "https://www.google.com/search?q=Hacienda+Los+Caballos+Funza+alojamiento" },
+            { nombre: "Hacienda Moncora", municipio: "El Rosal", vereda: "Buena Vista", precio: "$110.000 - $130.000 COP", calificacion: "4.8 / 5", destacado: "Nivel premium, jardines espectaculares, máxima exclusividad y comodidad superior.", img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&auto=format&fit=crop&q=80", linkDetalle: "https://www.google.com/search?q=Hacienda+Moncora+El+Rosal" },
+            { nombre: "Casa de Campo Genesis", municipio: "El Rosal", vereda: "Rural El Rosal", precio: "$80.000 - $95.000 COP", calificacion: "Acogedora", destacado: "Estilo hogareño, total tranquilidad, aislada de vías principales y gran cocina social.", img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&auto=format&fit=crop&q=80", linkDetalle: "https://www.google.com/search?q=Casa+de+Campo+Genesis+El+Rosal+alojamiento" },
+            { nombre: "Villas del Espino", municipio: "El Rosal", vereda: "Sector El Espino", precio: "$90.000 - $115.000 COP", calificacion: "4.6 / 5", destacado: "Instalaciones modernas, excelente distribución para 15 huéspedes y áreas impecables.", img: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&auto=format&fit=crop&q=80", linkDetalle: "https://www.google.com/search?q=Villas+del+Espino+El+Rosal" }
         ];
 
         const grid = document.getElementById('grid-fincas');
@@ -120,37 +95,48 @@
 
         fincas.forEach(finca => {
             const card = document.createElement('div');
-            card.className = "bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 flex flex-col justify-between border border-slate-100";
+            // AQUÍ ESTÁ LA MAGIA DEL GLASSMORPHISM PARA LAS TARJETAS
+            card.className = "group relative bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl shadow-2xl overflow-hidden hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between";
             
             card.innerHTML = `
                 <div>
-                    <!-- Imagen con enlace a detalles -->
-                    <a href="${finca.linkDetalle}" target="_blank" title="Clic para ver más detalles en la web" class="relative h-48 overflow-hidden block group">
-                        <img src="${finca.img}" alt="${finca.nombre}" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
-                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition duration-300"></div>
-                        <span class="absolute top-3 right-3 bg-dark/80 backdrop-blur-md text-white text-xs font-semibold py-1 px-3 rounded-full">
+                    <!-- Imagen -->
+                    <a href="${finca.linkDetalle}" target="_blank" title="Buscar en Google" class="relative h-56 overflow-hidden block">
+                        <img src="${finca.img}" alt="${finca.nombre}" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                        <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition duration-300"></div>
+                        <!-- Etiqueta flotante Glass -->
+                        <span class="absolute top-4 right-4 bg-white/20 backdrop-blur-md border border-white/30 text-white text-xs font-semibold py-1.5 px-4 rounded-full shadow-lg">
                             ${finca.municipio}
                         </span>
-                        <span class="absolute bottom-3 left-3 bg-brand/90 text-white text-xs font-semibold py-1 px-3 rounded-lg flex items-center opacity-0 group-hover:opacity-100 transition duration-300">
-                            🔍 Ver detalles
-                        </span>
-                    </a>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-bold text-dark">${finca.nombre}</h3>
-                            <span class="text-xs bg-green-100 text-brand font-bold py-1 px-2 rounded-md">${finca.calificacion}</span>
+                        <!-- Icono Hover -->
+                        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 pointer-events-none">
+                            <span class="bg-black/50 backdrop-blur-sm text-white py-2 px-5 rounded-full border border-white/20 flex items-center gap-2">
+                                🔍 Buscar
+                            </span>
                         </div>
-                        <p class="text-xs text-slate-400 mb-4 font-medium">📍 Vereda: ${finca.vereda}</p>
-                        <p class="text-sm text-slate-600 mb-4">${finca.destacado}</p>
-                        <div class="bg-slate-50 p-3 rounded-lg border border-slate-100 mb-4">
-                            <span class="text-xs text-slate-400 block">Est. persona / noche:</span>
-                            <span class="text-sm font-bold text-slate-700">${finca.precio}</span>
+                    </a>
+                    
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-2xl font-bold text-white leading-tight">${finca.nombre}</h3>
+                        </div>
+                        <div class="flex items-center gap-2 mb-4">
+                            <span class="text-xs bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 font-semibold py-1 px-3 rounded-lg">${finca.calificacion}</span>
+                            <span class="text-xs text-slate-300 font-medium">📍 ${finca.vereda}</span>
+                        </div>
+                        <p class="text-sm text-slate-300 mb-6 font-light leading-relaxed">${finca.destacado}</p>
+                        
+                        <!-- Caja de Precio Glass -->
+                        <div class="bg-black/20 backdrop-blur-sm p-4 rounded-2xl border border-white/10 mb-2">
+                            <span class="text-xs text-slate-400 block mb-1">Est. persona / noche:</span>
+                            <span class="text-lg font-bold text-emerald-400">${finca.precio}</span>
                         </div>
                     </div>
                 </div>
-                <div class="px-6 pb-6">
-                    <!-- Botón que ejecuta la función JS de copiar y abrir WhatsApp pasando el nombre y la foto -->
-                    <button onclick="votar('${finca.nombre}', '${finca.img}')" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2.5 px-4 rounded-xl shadow transition duration-200 flex justify-center items-center gap-2">
+                
+                <div class="px-6 pb-6 pt-2">
+                    <!-- Botón con Glow -->
+                    <button onclick="votar('${finca.nombre}', '${finca.img}')" class="w-full bg-brand hover:bg-emerald-400 text-white font-semibold py-3.5 px-4 rounded-2xl shadow-[0_4px_15px_rgba(16,185,129,0.3)] hover:shadow-[0_4px_25px_rgba(16,185,129,0.6)] transition-all duration-300 flex justify-center items-center gap-2">
                         <span>Votar en el Grupo</span>
                     </button>
                 </div>
@@ -158,9 +144,8 @@
             grid.appendChild(card);
         });
 
-        // Función para copiar el voto al portapapeles y abrir el grupo
         function votar(nombreFinca, imgFinca) {
-            const textoVoto = `¡Hola! Mi voto para la escapada es por: *${nombreFinca}* 🏡\n\n📷 Mira la foto de la casa aquí:\n${imgFinca}\n\n🌐 Regresa a nuestra web para ver todas las opciones haciendo clic aquí:\n${urlWeb}`;
+            const textoVoto = `¡Hola! Mi voto para la escapada es por: *${nombreFinca}* 🏡\n\n📷 Mira la foto aquí:\n${imgFinca}\n\n🌐 Regresa a nuestra web para ver todas las opciones haciendo clic aquí:\n${urlWeb}`;
             
             navigator.clipboard.writeText(textoVoto).then(() => {
                 alert(`¡Se ha copiado tu voto por ${nombreFinca}!\n\nAl darle Aceptar, se abrirá WhatsApp. Solo tienes que darle a "Pegar" y enviar el mensaje en el grupo.`);
