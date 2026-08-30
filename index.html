@@ -29,7 +29,7 @@
     <div class="fixed inset-0 z-[-1] bg-gradient-to-br from-slate-900/95 via-slate-900/85 to-emerald-900/90 backdrop-blur-md"></div>
 
     <!-- HERO -->
-    <header class="relative min-h-[70vh] flex items-center justify-center pt-10 pb-10">
+    <header class="relative min-h-[60vh] flex items-center justify-center pt-20 pb-10">
         <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
             <span class="inline-block bg-white/10 backdrop-blur-md border border-white/20 text-emerald-300 text-xs md:text-sm font-semibold uppercase tracking-widest py-1.5 px-5 rounded-full mb-6 shadow-lg">
                 Viaje Sabana 2026
@@ -38,13 +38,24 @@
                 ¡Nos Vamos a la <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">Sabana!</span>
             </h1>
             <p class="text-lg text-slate-300 mb-8 font-light max-w-2xl mx-auto leading-relaxed">
-                Del <strong class="text-white font-semibold">19 al 23 de noviembre</strong>. Explora, revisa los detalles y vota por la casa ideal para nuestro grupo.
+                Del <strong class="text-white font-semibold">19 al 23 de noviembre</strong>. Explora, revisa los detalles y vota por la casa privada ideal para nuestro grupo.
             </p>
         </div>
     </header>
 
-    <!-- TOP 3 ESTADÍSTICO (NUEVO BLOQUE) -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 mb-16 relative z-10">
+    <!-- CATÁLOGO -->
+    <main id="opciones" class="max-w-7xl mx-auto pt-10 pb-16 px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-extrabold text-white sm:text-4xl drop-shadow-lg">Todas las Opciones</h2>
+        </div>
+
+        <div id="grid-fincas" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Renderizado JS -->
+        </div>
+    </main>
+
+    <!-- TOP 3 ESTADÍSTICO -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4 mb-20 relative z-10">
         <div class="bg-white/10 backdrop-blur-xl border border-emerald-500/30 rounded-3xl p-8 shadow-[0_0_40px_rgba(16,185,129,0.15)]">
             <div class="flex flex-col md:flex-row justify-between items-center mb-8 border-b border-white/10 pb-4">
                 <h2 class="text-2xl font-bold text-white flex items-center gap-3">
@@ -95,8 +106,8 @@
                             <span class="text-lg font-bold text-white">28 👁️</span>
                         </div>
                     </div>
-                    <h3 class="text-xl font-bold text-white mb-1">Hacienda Los Caballos</h3>
-                    <p class="text-sm text-blue-300 mb-3">Funza &bull; Excelente</p>
+                    <h3 class="text-xl font-bold text-white mb-1">Casa Quinta El Bosque</h3>
+                    <p class="text-sm text-blue-300 mb-3">Cota &bull; 4.9/5</p>
                     <div class="w-full bg-slate-700/50 rounded-full h-2">
                         <div class="bg-blue-500 h-2 rounded-full" style="width: 55%"></div>
                     </div>
@@ -106,28 +117,23 @@
         </div>
     </section>
 
-    <!-- CATÁLOGO -->
-    <main id="opciones" class="max-w-7xl mx-auto pb-20 px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-extrabold text-white sm:text-4xl drop-shadow-lg">Todas las Opciones</h2>
-        </div>
-
-        <div id="grid-fincas" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Renderizado JS -->
-        </div>
-    </main>
+    <!-- FOOTER GLASSMORPHISM -->
+    <footer class="bg-white/5 backdrop-blur-lg border-t border-white/10 text-slate-400 py-8 text-center text-sm relative z-10">
+        <p>Organización del Viaje Sabana de Bogotá &bull; Noviembre 2026</p>
+    </footer>
 
     <script>
-        // Array actualizado: Cero nieve, fotos de fincas/campos, y precios ajustados.
         const fincas = [
             { nombre: "Finca el Ensueño", municipio: "Tenjo", vereda: "Zona Rural Tenjo", precio: "$95.000 - $115.000 COP", calificacion: "Excelente", destacado: "Amplios terrenos verdes, gran parqueadero privado y entorno muy silencioso.", img: "https://images.unsplash.com/photo-1599839619722-39751411ea63?w=600&auto=format&fit=crop&q=80", linkDetalle: "https://www.google.com/search?q=Finca+el+Ensueño+Tenjo+alojamiento" },
             { nombre: "Finca El Recreo", municipio: "Tenjo", vereda: "Vía Tabio", precio: "$100.000 - $120.000 COP", calificacion: "Muy Buena", destacado: "Paisajes tradicionales, zonas abiertas para asados y excelente espacio social.", img: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&auto=format&fit=crop&q=80", linkDetalle: "https://www.google.com/search?q=Finca+El+Recreo+Tenjo+alojamiento" },
             { nombre: "Hacienda El Pueblito", municipio: "Tenjo", vereda: "Vía Funza", precio: "$110.000 - $130.000 COP", calificacion: "Sobresaliente", destacado: "Arquitectura sabanera clásica, fácil acceso por vías principales y hermosos jardines.", img: "https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?w=600&auto=format&fit=crop&q=80", linkDetalle: "https://www.google.com/search?q=Hacienda+El+Pueblito+Tenjo+alojamiento" },
             { nombre: "La Cantaleta Campestre", municipio: "Facatativá", vereda: "Santa Rosa", precio: "$90.000 - $110.000 COP", calificacion: "4.1 / 5", destacado: "Ambiente muy relajante, amplias zonas de integración y contacto directo con la naturaleza.", img: "https://images.unsplash.com/photo-1449844908441-8829872d2607?w=600&auto=format&fit=crop&q=80", linkDetalle: "https://www.google.com/search?q=La+Cantaleta+Campestre+Facatativá" },
-            // Reemplazo de la cabaña con nieve por una de entorno campestre y bosque verde:
-            { nombre: "Restaurante de Montaña & Spa", municipio: "Facatativá", vereda: "Sector Montaña", precio: "$120.000 - $145.000 COP", calificacion: "Exclusiva", destacado: "Servicios de spa y relajación, clima de montaña sabanera y restaurante integrado.", img: "https://images.unsplash.com/photo-1472220625704-91e1462799b2?w=600&auto=format&fit=crop&q=80", linkDetalle: "https://www.google.com/search?q=Restaurante+de+Montaña+y+Spa+Facatativá+alojamiento" },
-            // Reemplazo del baño por un espacio de eventos rústico/campestre:
-            { nombre: "Casa Marly Eventos", municipio: "Facatativá", vereda: "San Rafael", precio: "$95.000 - $115.000 COP", calificacion: "Muy Buena", destacado: "Estilo rústico, grandes zonas comunes para reuniones y fácil parqueadero.", img: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=600&auto=format&fit=crop&q=80", linkDetalle: "https://www.google.com/search?q=Casa+Marly+Eventos+Facatativá" },
+            
+            // --- NUEVAS OPCIONES PRIVADAS (REEMPLAZANDO RESTAURANTE Y EVENTOS) ---
+            { nombre: "Casa Quinta El Bosque", municipio: "Cota", vereda: "Parcelas (Vía Siberia)", precio: "$115.000 - $135.000 COP", calificacion: "4.9 / 5", destacado: "A pocos minutos del Coliseo MedPlus. Totalmente privada, rodeada de árboles y excelente BBQ.", img: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&auto=format&fit=crop&q=80", linkDetalle: "https://www.google.com/search?q=Casa+Quinta+El+Bosque+Cota+alojamiento" },
+            { nombre: "Finca La Estancia", municipio: "Tenjo", vereda: "Vía Siberia - Tenjo", precio: "$95.000 - $115.000 COP", calificacion: "Muy Buena", destacado: "Privacidad absoluta para el grupo. Amplias zonas verdes y conexión súper rápida post-concierto.", img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&auto=format&fit=crop&q=80", linkDetalle: "https://www.google.com/search?q=Finca+La+Estancia+Tenjo+alojamiento" },
+            // ----------------------------------------------------------------------
+            
             { nombre: "Hacienda Los Caballos", municipio: "Funza", vereda: "Campestre", precio: "$105.000 - $125.000 COP", calificacion: "Excelente", destacado: "Confort tradicional sabanero, alta privacidad y zonas exteriores para comidas.", img: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=600&auto=format&fit=crop&q=80", linkDetalle: "https://www.google.com/search?q=Hacienda+Los+Caballos+Funza+alojamiento" },
             { nombre: "Hacienda Moncora", municipio: "El Rosal", vereda: "Buena Vista", precio: "$130.000 - $155.000 COP", calificacion: "4.8 / 5", destacado: "Nivel premium, jardines espectaculares, máxima exclusividad y comodidad superior.", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&auto=format&fit=crop&q=80", linkDetalle: "https://www.google.com/search?q=Hacienda+Moncora+El+Rosal" },
             { nombre: "Casa de Campo Genesis", municipio: "El Rosal", vereda: "Rural", precio: "$90.000 - $110.000 COP", calificacion: "Acogedora", destacado: "Estilo hogareño, total tranquilidad, aislada de vías principales y gran cocina social.", img: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&auto=format&fit=crop&q=80", linkDetalle: "https://www.google.com/search?q=Casa+de+Campo+Genesis+El+Rosal+alojamiento" },
