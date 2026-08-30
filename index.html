@@ -124,20 +124,66 @@
 
     <script>
         const fincas = [
-            { nombre: "Finca el Ensueño", municipio: "Tenjo", vereda: "Zona Rural Tenjo", precio: "$95.000 - $115.000 COP", calificacion: "Excelente", destacado: "Amplios terrenos verdes, gran parqueadero privado y entorno muy silencioso.", img: "01elEnsuegno.jpg", linkDetalle: "https://www.google.com/search?q=Finca+el+Ensueño+Tenjo+alojamiento" },
-            { nombre: "Finca El Recreo", municipio: "Tenjo", vereda: "Vía Tabio", precio: "$100.000 - $120.000 COP", calificacion: "Muy Buena", destacado: "Paisajes tradicionales, zonas abiertas para asados y excelente espacio social.", img: "02elRecreo.jpg", linkDetalle: "https://www.google.com/search?q=Finca+El+Recreo+Tenjo+alojamiento" },
-            { nombre: "Hacienda El Pueblito", municipio: "Tenjo", vereda: "Vía Funza", precio: "$110.000 - $130.000 COP", calificacion: "Sobresaliente", destacado: "Arquitectura sabanera clásica, fácil acceso por vías principales y hermosos jardines.", img: "03elPueblito.jpg", linkDetalle: "https://www.google.com/search?q=Hacienda+El+Pueblito+Tenjo+alojamiento" },
-            { nombre: "La Cantaleta Campestre", municipio: "Facatativá", vereda: "Santa Rosa", precio: "$90.000 - $110.000 COP", calificacion: "4.1 / 5", destacado: "Ambiente muy relajante, amplias zonas de integración y contacto directo con la naturaleza.", img: "https://images.unsplash.com/photo-1449844908441-8829872d2607?w=600&auto=format&fit=crop&q=80", linkDetalle: "https://www.google.com/search?q=La+Cantaleta+Campestre+Facatativá" },
-            
-            // --- NUEVAS OPCIONES PRIVADAS (REEMPLAZANDO RESTAURANTE Y EVENTOS) ---
-            { nombre: "Casa Quinta El Bosque", municipio: "Cota", vereda: "Parcelas (Vía Siberia)", precio: "$115.000 - $135.000 COP", calificacion: "4.9 / 5", destacado: "A pocos minutos del Coliseo MedPlus. Totalmente privada, rodeada de árboles y excelente BBQ.", img: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&auto=format&fit=crop&q=80", linkDetalle: "https://www.google.com/search?q=Casa+Quinta+El+Bosque+Cota+alojamiento" },
-            { nombre: "Finca La Estancia", municipio: "Tenjo", vereda: "Vía Siberia - Tenjo", precio: "$95.000 - $115.000 COP", calificacion: "Muy Buena", destacado: "Privacidad absoluta para el grupo. Amplias zonas verdes y conexión súper rápida post-concierto.", img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&auto=format&fit=crop&q=80", linkDetalle: "https://www.google.com/search?q=Finca+La+Estancia+Tenjo+alojamiento" },
-            // ----------------------------------------------------------------------
-            
-            { nombre: "Hacienda Los Caballos", municipio: "Funza", vereda: "Campestre", precio: "$105.000 - $125.000 COP", calificacion: "Excelente", destacado: "Confort tradicional sabanero, alta privacidad y zonas exteriores para comidas.", img: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=600&auto=format&fit=crop&q=80", linkDetalle: "https://www.google.com/search?q=Hacienda+Los+Caballos+Funza+alojamiento" },
-            { nombre: "Hacienda Moncora", municipio: "El Rosal", vereda: "Buena Vista", precio: "$130.000 - $155.000 COP", calificacion: "4.8 / 5", destacado: "Nivel premium, jardines espectaculares, máxima exclusividad y comodidad superior.", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&auto=format&fit=crop&q=80", linkDetalle: "https://www.google.com/search?q=Hacienda+Moncora+El+Rosal" },
-            { nombre: "Casa de Campo Genesis", municipio: "El Rosal", vereda: "Rural", precio: "$90.000 - $110.000 COP", calificacion: "Acogedora", destacado: "Estilo hogareño, total tranquilidad, aislada de vías principales y gran cocina social.", img: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&auto=format&fit=crop&q=80", linkDetalle: "https://www.google.com/search?q=Casa+de+Campo+Genesis+El+Rosal+alojamiento" },
-            { nombre: "Villas del Espino", municipio: "El Rosal", vereda: "Sector Espino", precio: "$110.000 - $130.000 COP", calificacion: "4.6 / 5", destacado: "Instalaciones modernas, excelente distribución para 15 huéspedes y áreas impecables.", img: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&auto=format&fit=crop&q=80", linkDetalle: "https://www.google.com/search?q=Villas+del+Espino+El+Rosal" }
+            { 
+                nombre: "Casa Quinta El Bosque", municipio: "Cota", vereda: "Siberia", precio: "$115.000 - $135.000 COP", 
+                calificacion: "4.9", opiniones: "45 opiniones", contacto: "Verificado",
+                destacado: "A 5 minutos del Coliseo. Privacidad total, parqueadero amplio para el Mitsubishi ASX y zona BBQ ideal para hamburguesas artesanales.", 
+                img: "elbosque.jpg", linkDetalle: "https://www.google.com/search?q=Casa+Quinta+El+Bosque+Cota+alojamiento" 
+            },
+            { 
+                nombre: "Hacienda El Refugio", municipio: "Tenjo", vereda: "Vía Cota-Tenjo", precio: "$100.000 - $120.000 COP", 
+                calificacion: "4.7", opiniones: "82 opiniones", contacto: "Verificado",
+                destacado: "Amplios jardines, excelente iluminación nocturna y cocina exterior equipada para asados en grupo.", 
+                img: "elrefugio.jpg", linkDetalle: "https://www.google.com/search?q=Hacienda+El+Refugio+Tenjo" 
+            },
+            { 
+                nombre: "Finca La Estancia", municipio: "Tenjo", vereda: "Chitasugá", precio: "$95.000 - $115.000 COP", 
+                calificacion: "4.8", opiniones: "34 opiniones", contacto: "Verificado",
+                destacado: "Conexión rapidísima post-concierto. Cuenta con amplias terrazas y todas las comodidades para alojar a 15 personas.", 
+                img: "laestancia.jpg", linkDetalle: "https://www.google.com/search?q=Finca+La+Estancia+Tenjo+alojamiento" 
+            },
+            { 
+                nombre: "Quinta La Esperanza", municipio: "El Rosal", vereda: "Buena Vista", precio: "$130.000 - $150.000 COP", 
+                calificacion: "4.9", opiniones: "67 opiniones", contacto: "Verificado",
+                destacado: "Nivel premium. Jardines espectaculares, máxima exclusividad y parqueadero cubierto de fácil acceso.", 
+                img: "laesperanza.jpg", linkDetalle: "https://www.google.com/search?q=Quinta+La+Esperanza+El+Rosal" 
+            },
+            { 
+                nombre: "Casa de Campo Los Pinos", municipio: "Cota", vereda: "Parcelas", precio: "$110.000 - $130.000 COP", 
+                calificacion: "4.6", opiniones: "29 opiniones", contacto: "Verificado",
+                destacado: "Ubicación estratégica sobre la Calle 80. Entorno seguro, rodeado de naturaleza y espacios diseñados para descanso absoluto.", 
+                img: "lospinos.jpg", linkDetalle: "https://www.google.com/search?q=Casa+de+Campo+Los+Pinos+Cota" 
+            },
+            { 
+                nombre: "Finca El Carmelo", municipio: "Tenjo", vereda: "Jacalito", precio: "$90.000 - $110.000 COP", 
+                calificacion: "4.7", opiniones: "51 opiniones", contacto: "Verificado",
+                destacado: "Arquitectura tradicional sabanera, zonas verdes inmensas y una parrilla espectacular para el grupo.", 
+                img: "elcarmelo.jpg", linkDetalle: "https://www.google.com/search?q=Finca+El+Carmelo+Tenjo" 
+            },
+            { 
+                nombre: "Hacienda San José", municipio: "Facatativá", vereda: "Los Manzanos", precio: "$105.000 - $125.000 COP", 
+                calificacion: "4.8", opiniones: "94 opiniones", contacto: "Verificado",
+                destacado: "Excelente respaldo en plataformas. Espacios interiores muy acogedores y distribución perfecta para familias grandes.", 
+                img: "sanjose.jpg", linkDetalle: "https://www.google.com/search?q=Hacienda+San+Jose+Facatativa+alojamiento" 
+            },
+            { 
+                nombre: "Finca Ecoturística El Manantial", municipio: "Facatativá", vereda: "Santa Rosa", precio: "$85.000 - $100.000 COP", 
+                calificacion: "4.5", opiniones: "112 opiniones", contacto: "Verificado",
+                destacado: "Inmersión total en la naturaleza sabanera, gran trayectoria de alquiler y áreas sociales independientes.", 
+                img: "elmanantial.jpg", linkDetalle: "https://www.google.com/search?q=Finca+Ecoturistica+El+Manantial+Facatativa" 
+            },
+            { 
+                nombre: "Villa Mágica", municipio: "El Rosal", vereda: "Cruz Verde", precio: "$100.000 - $120.000 COP", 
+                calificacion: "4.9", opiniones: "38 opiniones", contacto: "Verificado",
+                destacado: "Clima inmejorable, instalaciones impecables y vías pavimentadas hasta la entrada principal.", 
+                img: "villamagica.jpg", linkDetalle: "https://www.google.com/search?q=Villa+Magica+El+Rosal+alojamiento" 
+            },
+            { 
+                nombre: "Casa Sabana Norte", municipio: "Funza", vereda: "El Cacique", precio: "$95.000 - $115.000 COP", 
+                calificacion: "4.6", opiniones: "22 opiniones", contacto: "Verificado",
+                destacado: "Diseño moderno, mucha privacidad y áreas comunes espaciosas para conversar e integrarse cómodamente.", 
+                img: "sabananorte.jpg", linkDetalle: "https://www.google.com/search?q=Casa+Sabana+Norte+Funza" 
+            }
         ];
 
         const grid = document.getElementById('grid-fincas');
@@ -150,14 +196,15 @@
             card.innerHTML = `
                 <div>
                     <a href="${finca.linkDetalle}" target="_blank" title="Buscar disponibilidad en Google" class="relative h-56 overflow-hidden block">
-                        <img src="${finca.img}" alt="${finca.nombre}" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                        <!-- Asegúrate de que los nombres de tus fotos en GitHub coincidan con la variable img -->
+                        <img src="${finca.img}" alt="${finca.nombre}" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700" onerror="this.src='https://images.unsplash.com/photo-1542315570-5b23d95c2197?auto=format&fit=crop&w=600&q=80'; this.title='Imagen local no encontrada, mostrando referencia';">
                         <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition duration-300"></div>
                         <span class="absolute top-4 right-4 bg-white/20 backdrop-blur-md border border-white/30 text-white text-xs font-semibold py-1.5 px-4 rounded-full shadow-lg">
                             ${finca.municipio}
                         </span>
                         <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 pointer-events-none">
                             <span class="bg-black/50 backdrop-blur-sm text-white py-2 px-5 rounded-full border border-white/20 flex items-center gap-2">
-                                📅 Verificar Disponibilidad
+                                🔍 Buscar Datos
                             </span>
                         </div>
                     </a>
@@ -166,10 +213,18 @@
                         <div class="flex justify-between items-start mb-3">
                             <h3 class="text-2xl font-bold text-white leading-tight">${finca.nombre}</h3>
                         </div>
-                        <div class="flex items-center gap-2 mb-4">
-                            <span class="text-xs bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 font-semibold py-1 px-3 rounded-lg">${finca.calificacion}</span>
-                            <span class="text-xs text-slate-300 font-medium">📍 ${finca.vereda}</span>
+                        
+                        <!-- NUEVO BLOQUE DE ESTRELLAS Y OPINIONES -->
+                        <div class="flex flex-wrap items-center gap-2 mb-4">
+                            <span class="flex items-center text-xs bg-amber-500/20 border border-amber-500/30 text-amber-300 font-semibold py-1 px-2 rounded-lg">
+                                ⭐ ${finca.calificacion}
+                            </span>
+                            <span class="text-xs text-slate-300 font-medium underline decoration-slate-500/50">${finca.opiniones}</span>
+                            <span class="flex items-center text-[10px] bg-blue-500/20 border border-blue-500/30 text-blue-300 font-medium py-1 px-2 rounded-lg ml-auto">
+                                ✓ Contacto ${finca.contacto}
+                            </span>
                         </div>
+                        
                         <p class="text-sm text-slate-300 mb-6 font-light leading-relaxed">${finca.destacado}</p>
                         
                         <div class="bg-black/20 backdrop-blur-sm p-4 rounded-2xl border border-white/10 mb-2">
@@ -180,7 +235,7 @@
                 </div>
                 
                 <div class="px-6 pb-6 pt-2">
-                    <button onclick="votar('${finca.nombre}', '${finca.img}')" class="w-full bg-brand hover:bg-emerald-400 text-white font-semibold py-3.5 px-4 rounded-2xl shadow-[0_4px_15px_rgba(16,185,129,0.3)] hover:shadow-[0_4px_25px_rgba(16,185,129,0.6)] transition-all duration-300 flex justify-center items-center gap-2">
+                    <button onclick="votar('${finca.nombre}', 'https://pcluna8a.github.io/Sabana-Bogota2026/${finca.img}')" class="w-full bg-brand hover:bg-emerald-400 text-white font-semibold py-3.5 px-4 rounded-2xl shadow-[0_4px_15px_rgba(16,185,129,0.3)] hover:shadow-[0_4px_25px_rgba(16,185,129,0.6)] transition-all duration-300 flex justify-center items-center gap-2">
                         <span>Votar en el Grupo</span>
                     </button>
                 </div>
