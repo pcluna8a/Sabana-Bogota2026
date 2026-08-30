@@ -116,6 +116,7 @@
         ];
 
         const grid = document.getElementById('grid-fincas');
+        const urlWeb = 'https://pcluna8a.github.io/Sabana-Bogota2026/';
 
         fincas.forEach(finca => {
             const card = document.createElement('div');
@@ -148,8 +149,8 @@
                     </div>
                 </div>
                 <div class="px-6 pb-6">
-                    <!-- Botón que ejecuta la función JS de copiar y abrir WhatsApp -->
-                    <button onclick="votar('${finca.nombre}')" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2.5 px-4 rounded-xl shadow transition duration-200 flex justify-center items-center gap-2">
+                    <!-- Botón que ejecuta la función JS de copiar y abrir WhatsApp pasando el nombre y la foto -->
+                    <button onclick="votar('${finca.nombre}', '${finca.img}')" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2.5 px-4 rounded-xl shadow transition duration-200 flex justify-center items-center gap-2">
                         <span>Votar en el Grupo</span>
                     </button>
                 </div>
@@ -158,15 +159,13 @@
         });
 
         // Función para copiar el voto al portapapeles y abrir el grupo
-        function votar(nombreFinca) {
-            const textoVoto = `¡Hola! Mi voto para la escapada es por: *${nombreFinca}*`;
+        function votar(nombreFinca, imgFinca) {
+            const textoVoto = `¡Hola! Mi voto para la escapada es por: *${nombreFinca}* 🏡\n\n📷 Mira la foto de la casa aquí:\n${imgFinca}\n\n🌐 Regresa a nuestra web para ver todas las opciones haciendo clic aquí:\n${urlWeb}`;
             
-            // Intenta copiar al portapapeles primero
             navigator.clipboard.writeText(textoVoto).then(() => {
                 alert(`¡Se ha copiado tu voto por ${nombreFinca}!\n\nAl darle Aceptar, se abrirá WhatsApp. Solo tienes que darle a "Pegar" y enviar el mensaje en el grupo.`);
                 window.open('https://chat.whatsapp.com/LiX03QcQEtyFeFkM7XRw6L', '_blank');
             }).catch(err => {
-                // Si falla el portapapeles, simplemente abre el grupo
                 window.open('https://chat.whatsapp.com/LiX03QcQEtyFeFkM7XRw6L', '_blank');
             });
         }
